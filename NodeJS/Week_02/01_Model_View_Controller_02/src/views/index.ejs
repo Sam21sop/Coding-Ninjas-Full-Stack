@@ -9,14 +9,34 @@
             <th scope="col">Image</th>
         </tr>
     </thead>
-    <tbody>
-        <% product.forEach(product => {%>
+    <!-- <tbody>
+        <% products.forEach(product=> { %>
             <tr>
-                <td scope="row"> <%= product.id %></td>
-                <td scope="row"> <%= product.name %></td>
-                <td scope="row"> <%= product.desc %></td>
-                <td scope="row"> <%= product.price.toFixed(2) %></td>
-                <td scope="row"> <img src="<%= product.imageUrl %>" alt="Not Found" style="max-width: 100px;"></td>
+                <th scope="row">
+                    <%= product.id %>
+                </th>
+                <td>
+                    <%= product.name %>
+                </td>
+                <td>
+                    <%= product.desc %>
+                </td>
+                <td><%= product.price %>
+                </td>
+                <td>
+                    <img src="<%= product.imageUrl %>" alt="<%= product.name %>" style="max-width: 100px;">
+                </td>
+            </tr>
+            <% }) %>
+    </tbody> -->
+    <tbody>
+        <% products.forEach(prod => { %>
+            <tr>
+                <td> <%= prod.id %></td>
+                <td> <%= prod.name %></td>
+                <td> <%= prod.desc %></td>
+                <td> <%= prod.price %></td>
+                <td> <img src="<%= prod.imageUrl %>" alt="<%= prod.name %>" style="max-width: 100px;"></td>
             </tr>
         <% }) %>
     </tbody>

@@ -7,6 +7,10 @@ import ProductController from './src/contrllers/product.controller.js';
 // create server
 const server = express();
 
+
+// parse form data
+server.use(express.urlencoded({extended:true}));
+
 // setup view engine setting
 server.set('view engine', 'ejs')
 server.set('views', path.join(path.resolve(), 'src', 'views'))
@@ -18,7 +22,7 @@ server.use(ejsLayout)
 const productController = new ProductController();
 server.get('/', productController.getProduct)
 server.get('/new', productController.getAddForm)
-server.get('/', productController.addNewProduct)
+server.post('/', productController.addnewProduct)
 
 server.use(express.static('src/views'))
 
