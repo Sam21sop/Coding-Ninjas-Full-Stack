@@ -5,7 +5,7 @@ export default class ProductController{
     getProduct(req, res) {
         let product = ProductModel.get();
         console.log(product);
-        res.render('index', {products})
+        res.render('index', {product})
     }
 
     getAddForm(req, res){
