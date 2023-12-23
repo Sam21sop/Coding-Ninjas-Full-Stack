@@ -1,2 +1,0 @@
-name:sopan bhere, role:fullstack Developer, salary:50000
-name:sopan, role:group member, salary:30000
