@@ -1,5 +1,5 @@
-// No need to change pre-written code.
-// Make necessary imports here.
+// No need to change the pre-written code
+// Implement the features in io.on() section
 import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
@@ -20,33 +20,33 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
     console.log("Connection made.");
 
-    socket.on("join", (data) => {
-        // Emit a welcome message to the user who joined
-        socket.emit("message", { text: `Welcome, ${data.username}!` });
+    // Write your code here
+    socket.on("join", (data)=> {
+        // welcome message to the user who joined
+        socket.emit("message", {text: `Welcome, ${data.username}!`});
 
-        // Broadcast a message to all other users in the same room
+        // broadcast the message to all other users in same room
         socket.broadcast.to(data.room).emit("message", {
             text: `${data.username} has joined the room.`
         });
 
-        // Join the room
+        // join the room
         socket.join(data.room);
     });
 
+
     socket.on("sendMessage", async (data) => {
-
-        // write your code here
-
-        // Broadcast the received message to all users in the same room
+        // broadcast the recived message to all user in the same room
         io.to(data.room).emit("message", {
             username: data.username,
             text: data.message
         });
     });
 
+
     socket.on("disconnect", () => {
         console.log("Connection disconnected.");
     });
 });
 
-
+export default server;
