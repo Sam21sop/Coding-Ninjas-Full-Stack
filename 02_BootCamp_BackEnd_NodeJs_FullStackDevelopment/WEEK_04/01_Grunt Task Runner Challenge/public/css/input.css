@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    align-content: center;
+    justify-content: center;
+}
+
+.header{
+    clear: both;
+    forced-color-adjust: #555;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 200;
+    font-style: italic;
+    font-display: flex;
+}

@@ -1,0 +1,1 @@
+console.log("hello developer");let array=[9,6,4,3,2,6],minValue=0,maxValue=0;for(let a=0;a<array.length;a++)array[a]<minValue?minValue=array[a]:array[a]>maxValue&&(maxValue=array[a]);console.log(minValue),console.log(maxValue);
